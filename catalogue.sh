@@ -2,7 +2,7 @@ dnf module disable nodejs -y
 dnf module enable nodejs:20 -y
 dnf install nodejs -y
 
-cp catalouge.service /etc/systemd/system/catalouge.service
+cp catalogue.service /etc/systemd/system/catalogue.service
 cp mongo.repo /etc/yum.repos.d/mongo.repo
 useradd roboshop
 mkdir /app
