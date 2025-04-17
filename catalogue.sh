@@ -17,4 +17,5 @@ systemctl enable catalogue
 systemctl start catalogue
 
 dnf install mongodb-mongosh -y
+
 mongosh --host mongodb-dev.ashishlavale5.online </app/db/master-data.js
