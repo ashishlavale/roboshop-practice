@@ -8,7 +8,7 @@ systemd_setup() {
 }
 
 app_pre_setup() {
-  useradd roboshop
+  id roboshop || useradd roboshop
   mkdir /app
   curl -L -o /tmp/${comonent_name}.zip https://roboshop-artifacts.s3.amazonaws.com/${comonent_name}-v3.zip
   cd /app
