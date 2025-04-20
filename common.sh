@@ -35,3 +35,11 @@ java() {
   mvn clean package
   mv target/shipping-1.0.jar shipping.jar
 }
+
+golang() {
+  dnf install golang -y
+  app_pre_setup
+  go mod init dispatch
+  go get
+  go build
+}
