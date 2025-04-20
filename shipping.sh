@@ -1,11 +1,15 @@
+if [ -z "$1" ]; then
+  echo "Input password is missing"
+  exit 1
+fi
+
 component_name=shipping
 source common.sh
 
 java
 
 dnf install mysql -y
-mysql -h mysql-dev.ashishlavale5.online -uroot -pRoboShop@1 < /app/db/schema.sql
-mysql -h mysql-dev.ashishlavale5.online -uroot -pRoboShop@1 < /app/db/app-user.sql
-mysql -h mysql-dev.ashishlavale5.online -uroot -pRoboShop@1 < /app/db/master-data.sql
+for file in schema app-user master-data; then do
+mysql -h mysql-dev.ashishlavale5.online -uroot -p$1 < /app/db/$file.sql
 
 systemd_setup
