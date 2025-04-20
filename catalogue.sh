@@ -1,6 +1,6 @@
 component_name=catalogue
 source common.sh
-pwd=${pwd}
+pwd=$(pwd)
 
 nodejs
 
