@@ -22,3 +22,16 @@ nodejs() {
   app_pre_setup
   npm install
 }
+
+python() {
+  dnf install python3 gcc python3-devel -y
+  app_pre_setup
+  pip3 install -r requirements.txt
+}
+
+java() {
+  dnf install maven -y
+  app_pre_setup
+  mvn clean package
+  mv target/shipping-1.0.jar shipping.jar
+}
