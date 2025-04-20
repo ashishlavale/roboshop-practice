@@ -3,5 +3,5 @@ source common.sh
 
 nodejs
 
-system_setup
+systemd_setup
 
