@@ -1,10 +1,10 @@
 pwd=${pwd}
 
 systemd_setup() {
-  cp $(pwd)/${comonent_name} /etc/systemd/system/${comonent_name}
+  cp -r $(pwd)/${comonent_name} /etc/systemd/system/${comonent_name}
   systemctl daemon-reload
   systemctl enable ${comonent_name}
-  systemctl start cart ${comonent_name}
+  systemctl start ${comonent_name}
 }
 
 app_pre_setup() {
