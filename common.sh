@@ -1,14 +1,14 @@
 pwd=${pwd}
 
 systemd_setup() {
-  cp -r $(pwd)/${component_name} /etc/systemd/system/${component_name}
+  cp $(pwd)/${component_name} /etc/systemd/system/${component_name}
   systemctl daemon-reload
   systemctl enable ${component_name}
   systemctl start ${component_name}
 }
 
 app_pre_setup() {
-  useradd roboshop
+  id $roboshop || useradd roboshop
   mkdir /app
   curl -L -o /tmp/${component_name}.zip https://roboshop-artifacts.s3.amazonaws.com/${component_name}-v3.zip
   cd /app
