@@ -3,4 +3,4 @@ source common.sh
 
 python
 
-system_setup
+systemd_setup
