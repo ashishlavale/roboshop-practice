@@ -9,7 +9,7 @@ source common.sh
 java
 
 dnf install mysql -y
-for file in schema app-user master-data; then do
+for file in schema app-user master-data; do
 mysql -h mysql-dev.ashishlavale5.online -uroot -p$1 < /app/db/$file.sql
 
 systemd_setup
